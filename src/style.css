@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Tektur';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/tektur-v1-latin-regular.woff2') format('woff2'); 
+}
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Tektur';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts/tektur-v1-latin-500.woff2') format('woff2'); 
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+}
+
+.header {
+    background-color: rgb(228, 155, 21);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.name{
+    font-family: 'Tektur';
+    font-weight: 500;
+    font-size: 3rem;
+    padding-left: 8px  ;
+}
