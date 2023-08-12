@@ -5,8 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo-List</title>
 </head>
-<body>
+<body id="body">
     <script src="main.js" defer></script>
+
     <div class="header"><img src="./logo.png" alt="logo" class="logo"><span class="name">todoist</span></div>
+   
+    <div class="sidebar">
+        <div class="day">
+            <button class="inboxBtn">Inbox</button>
+        </div>
+        <div class="project">
+                <h1>Projects</h1>
+                <button class="addProject">Add Project</button>
+                <div class="divProject"></div>
+        </div>
+    </div>
+
+    <div class="main">
+        <button class="addTask">Add task</button>
+        <div class="selectedProject"></div>
+    </div>
+
+    <dialog id="favDialog">
+        <form>
+            <h2>Create a new todo</h2>
+            <input type="text" name="title" placeholder="Title" id="title">
+            <textarea rows="15" cols="30" placeholder="Description" id="description"></textarea>
+            <input type="date" id="date">
+            <select name="priority" id="select">
+                <option value="Low" selected>Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <div class="button">
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button id="confirmBtn" value="default">Submit</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="editDialog">
+        <form>
+            <h2>Edit todo</h2>
+            <input type="text" name="title" placeholder="Title" id="Etitle">
+            <textarea rows="15" cols="30" placeholder="Description" id="Edesc"></textarea>
+            <input type="date" id="Edate">
+            <select name="priority" id="Eselect">
+                <option value="Low" selected>Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <div class="button">
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button id="submitBtn" value="default">Submit</button>
+            </div>
+        </form>
+    </dialog>
+       
+    <dialog id="newDialog">
+        <form>
+            <input type="text" name="title" placeholder="Title" id="Ptitle">
+            <div class="button">
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button id="addBtn" value="default">Add</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="showDialog">
+        <form>
+            <div class="showForm">
+            </div>
+            <div class="button">
+                <button value="cancel" formmethod="dialog" id="cancel">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
 </body>
 </html>
