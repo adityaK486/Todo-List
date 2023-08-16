@@ -20510,6 +20510,7 @@ addProject.addEventListener('click',() => {
 addBtn.addEventListener('click',(event) => {
     event.preventDefault();
     pushProject();
+    populateStorage();
     newProject();
     newDialog.close();
 })
@@ -20550,6 +20551,7 @@ function newProject() {
 
 function remove(index) {
     myProjects.splice(index,1);
+    populateStorage();
     newProject();
 }
 
@@ -20621,6 +20623,7 @@ confirmBtn.addEventListener('click',(event) => {
     event.preventDefault();
     let newT = todos(title.value,desc.value,dueDate.value,select.value);
     pushTodo(newT);
+    populateStorage();
     showTodo(pChosen);
     favDialog.close();
 });
@@ -20661,6 +20664,7 @@ function openEditModal(i) {
 submitBtn.addEventListener('click',(event) => {
     event.preventDefault();
     newTodo(tChosen,Etitle,Edesc,Edate,Eselect);
+    populateStorage();
     editDialog.close();
 })
 
@@ -20675,8 +20679,24 @@ function newTodo(i,title,desc,date,select) {
 
 function removeTodo(i) {
     myProjects[pChosen].todos.splice(i,1);
+    populateStorage();
     showTodo(pChosen);
 }
+
+
+//function that saves the project and todo to localStorage when they are created
+function populateStorage(){
+    localStorage.setItem("myProjects",JSON.stringify(myProjects));
+}
+
+
+
+//function that looks for data in localStorage when app is loaded
+window.addEventListener('load',()=>{
+    myProjects = JSON.parse(localStorage.getItem("myProjects"));
+    newProject();
+    showTodo(0);
+})
 })();
 
 /******/ })()
